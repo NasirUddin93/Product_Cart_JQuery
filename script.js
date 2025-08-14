@@ -5,19 +5,27 @@ const addToCartBtn = document.getElementById("addToCart");
 const quantityInput = document.getElementById("quantity");
 const cartCount = document.getElementById("cartCount");
 const cartTotal = document.getElementById("cartTotal");
-const price = parseFloat(document.getElementById("price").innerText);
+
+// Make price re-assignable
+let price = parseFloat(document.getElementById("price").innerText);
 
 // Load cart from localStorage
 let cart = JSON.parse(localStorage.getItem("cart")) || { items: 0, total: 0 };
 updateCartUI();
 
-// Thumbnail click → change main image
+// Thumbnail click → change main image & price
 thumbnails.forEach((thumb) => {
   thumb.addEventListener("click", () => {
+    // Change main image
     mainImage.src = thumb.dataset.large;
 
+    // Highlight selected thumbnail
     thumbnails.forEach(t => t.classList.remove("selected"));
     thumb.classList.add("selected");
+
+    // Update price from dataset
+    price = parseFloat(thumb.dataset.price);
+    document.getElementById("price").innerText = price;
   });
 });
 
