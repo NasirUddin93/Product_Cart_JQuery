@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini eCommerce Product Page</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="product-container">
+
+        <div class="product-page">
+            <div class="product-gallery">
+                <img id="mainImage" src="images/product1.jpg" alt="Product Image">
+                <div class="thumbnails">
+                    <img class="thumb" src="images/product-01.png" data-large="images/product1.jpg" alt="Thumbnail 1">
+                    <img class="thumb" src="images/product-2.jpg" data-large="images/product2.jpg" alt="Thumbnail 2">
+                    <img class="thumb" src="images/product-03.jpeg" data-large="images/product3.jpg" alt="Thumbnail 3">
+                    <img class="thumb" src="images/product-04.jpeg" data-large="images/product3.jpg" alt="Thumbnail 3">
+                </div>
+            </div>
+            
+            <div class="product-details">
+                <h2>Awesome Product</h2>
+                <p>Price: $<span id="price">50</span></p>
+                <label>
+                    Quantity:
+                    <input type="number" id="quantity" value="1" min="1">
+                </label>
+                <button id="addToCart">Add to Cart</button>
+                
+                <div class="cart-summary">
+                    <p>Items in Cart: <span id="cartCount">0</span></p>
+                    <p>Total: $<span id="cartTotal">0</span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
